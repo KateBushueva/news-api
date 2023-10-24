@@ -21,6 +21,22 @@ description:         Please see the README on GitHub at <https://github.com/gith
 
 dependencies:
 - base >= 4.7 && < 5
+- aeson 
+- bytestring
+- configurator
+- exceptions
+- mtl
+- text
+- http-conduit
+- http-client
+- http-client-tls
+- http-types
+
+default-extensions:
+  - OverloadedStrings 
+  - DeriveGeneric
+  - DataKinds
+  - ScopedTypeVariables
 
 ghc-options:
 - -Wall
@@ -35,6 +51,9 @@ ghc-options:
 
 library:
   source-dirs: src
+  ghc-options:
+    - -Wall
+    - -Werror
 
 executables:
   news-api-exe:

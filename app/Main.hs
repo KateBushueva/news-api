@@ -1,6 +1,11 @@
 module Main (main) where
 
-import Lib
+import Backend.Client.Http
+import Backend.Environment.Config
+import Control.Monad.Reader
 
 main :: IO ()
-main = someFunc
+main = do
+  env <- readEnvFromFile
+  request <- runReaderT (findByKeyWords ["Harry Potter", "one"]) env
+  print request
