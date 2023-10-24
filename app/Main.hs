@@ -1,11 +1,15 @@
 module Main (main) where
 
-import Backend.Client.Http
+import Backend.Client.Handle
 import Backend.Environment.Config
-import Control.Monad.Reader
+import Common.Handle
 
 main :: IO ()
 main = do
   env <- readEnvFromFile
-  request <- runReaderT (findByKeyWords ["Harry Potter", "one"]) env
-  print request
+  let handle = createBackendHandle env
+  -- test
+  articles <- getNNews handle 3
+  print articles
+  -- pass handle to the function that process user's requests
+  pure ()

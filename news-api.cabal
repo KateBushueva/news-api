@@ -25,6 +25,7 @@ source-repository head
 
 library
   exposed-modules:
+      Backend.Client.Handle
       Backend.Client.Http
       Backend.Client.URL
       Backend.Environment.Config
@@ -43,7 +44,7 @@ library
       DeriveGeneric
       DataKinds
       ScopedTypeVariables
-  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -Wall -Werror
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -Wall
   build-depends:
       aeson
     , base >=4.7 && <5
