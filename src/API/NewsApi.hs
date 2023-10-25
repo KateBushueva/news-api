@@ -45,8 +45,9 @@ findByTitle (Just title) = handleApiRequest $ FindByTitle title
 
 findByKeywords :: Maybe T.Text -> ApiM [Article]
 findByKeywords Nothing = throwM err400
--- TODO: split keywords by comma
-findByKeywords (Just keywords) = handleApiRequest $ FindByKeywords [keywords]
+findByKeywords (Just keywords) = do
+  let wordsArray = T.strip <$> T.splitOn "," keywords
+  handleApiRequest $ FindByKeywords (take 3 wordsArray)
 
 handleApiRequest :: Request -> ApiM [Article]
 handleApiRequest request = do
