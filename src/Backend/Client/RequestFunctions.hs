@@ -1,4 +1,4 @@
-module Backend.Client.Http (fetchNNews, findByPhrase, findByKeyWords) where
+module Backend.Client.RequestFunctions (fetchNNews, findByPhrase, findByKeyWords) where
 
 import Backend.Client.URL
 import Backend.Environment.Monad

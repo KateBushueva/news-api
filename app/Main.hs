@@ -1,15 +1,14 @@
 module Main (main) where
 
+import API.Cache (initCache)
+import API.Monad as API
+import API.NewsApi (runApplication)
 import Backend.Client.Handle
-import Backend.Environment.Config
-import Common.Handle
+import Backend.Environment.Config as Backend
 
 main :: IO ()
 main = do
-  env <- readEnvFromFile
-  let handle = createBackendHandle env
-  -- test
-  articles <- getNNews handle 3
-  print articles
-  -- pass handle to the function that process user's requests
-  pure ()
+  backendEnv <- Backend.readEnvFromFile
+  let handle = createBackendHandle backendEnv
+      applicationEnv = API.Env handle initCache
+  runApplication applicationEnv

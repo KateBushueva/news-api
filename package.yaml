@@ -31,12 +31,19 @@ dependencies:
 - http-client
 - http-client-tls
 - http-types
+- servant
+- servant-client
+- servant-server
+- transformers
+- wai
+- warp
 
 default-extensions:
   - OverloadedStrings 
   - DeriveGeneric
   - DataKinds
   - ScopedTypeVariables
+  - RecordWildCards
 
 ghc-options:
 - -Wall

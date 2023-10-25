@@ -1,6 +1,6 @@
 module Backend.Client.Handle (createBackendHandle) where
 
-import qualified Backend.Client.Http as Backend
+import qualified Backend.Client.RequestFunctions as Backend
 import Backend.Environment.Config
 import Backend.Environment.Monad
 import Common.Article
