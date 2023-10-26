@@ -9,8 +9,8 @@ The service supports simple caching mechanism, which stores up to 10 last reques
 ## How to start
 
 1. Clone the repository
-2. Before running you need to create a `local.config` file in the project root (use the `template.config` file as an example). In your `local.config` file "Your_GNews_API_key" value must be replaced with the API key that you get from GNews service (you may need to sing up)
-3. Type `stack build` and after building completes call `stack run` in terminal from project root folder to build and run the application. The server will work on port 4008.
+2. Before running you need to create a `local.config` file in the project root (use the `template.config` file as an example). In your `local.config` file "Your_GNews_API_key" value must be replaced with the API key that you get from GNews service (you may need to sing up if you don't have an account)
+3. Type `stack build` (if use stack) or `cabal build` (if use cabal) in terminal from the project root folder to build the application. Wait a while for the building completes and call `stack run` (for stack) or `cabal run news-api-exe` (for cabal) in your terminal to run the application. The server will work on port 4008.
 
 ## How to use
 

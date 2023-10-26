@@ -1,3 +1,5 @@
 .stack-work/
-local.config
+dist-*
+cabal-dev
+local*
 *~
